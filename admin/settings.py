@@ -1,3 +1,4 @@
+# add random comment
 """
 Django settings for admin project.
 
@@ -84,7 +85,7 @@ DATABASES = {
         'NAME': 'admin',
         'USER': 'root_user',
         'PASSWORD': 'root_user',
-        'HOST': 'admin-db-1',
+        'HOST': 'db',
         'PORT': '3306',
     }
 }
@@ -131,3 +132,7 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CORS_ORIGIN_ALLOW_ALL = True
+
+REST_FRAMEWORK = {
+	'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema'
+}

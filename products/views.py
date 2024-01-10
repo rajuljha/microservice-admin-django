@@ -8,6 +8,9 @@ from .serializers import ProductSerializer
 import random
 
 class ProductViewSet(viewsets.ModelViewSet):
+    serializer_class = ProductSerializer
+    queryset = Product.objects.values('id').distinct()
+    serializer = ProductSerializer(queryset, many=True)
     def list(self, request):  # /api/products
         products = Product.objects.all()
         serializer = ProductSerializer(products, many=True)
