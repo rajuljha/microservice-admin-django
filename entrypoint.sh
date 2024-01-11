@@ -8,4 +8,4 @@ function wait_for_db()
 }
 
 wait_for_db
-exec python manage.py runserver 0.0.0.0:8000
+exec python manage.py runserver 0.0.0.0:8000 && python consumer.py
